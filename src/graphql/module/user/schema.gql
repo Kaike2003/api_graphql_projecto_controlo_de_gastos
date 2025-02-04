@@ -1,0 +1,25 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+}
+
+input InputCreateUser {
+  name: String!
+  email: String!
+  password: String!
+}
+
+input InputAuthenticateByCodeUser {
+  code: String!
+}
+
+type Query {
+  users: String
+}
+
+type Mutation {
+  createUser(data: InputCreateUser!): String!
+  authenticateByCodeUser(data: InputAuthenticateByCodeUser): String!
+}
