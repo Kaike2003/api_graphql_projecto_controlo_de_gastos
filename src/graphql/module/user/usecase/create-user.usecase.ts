@@ -40,7 +40,7 @@ export default class CreateUserUseCase extends DataSource implements UseCase<Cre
 
       const existedEmail = await this.prisma.user.findUnique({ where: { email: data.email } });
 
-      if (existedEmail) {
+      if (existedEmail) {  
         throw new UserNotFoundError("There is already a user with that email.");
       }
 
